@@ -10,6 +10,8 @@ data class Loan(
     val id: Long,
     @ColumnInfo(name = "debtorName")
     val debtorName: String?,
+    @ColumnInfo(name = "concept")
+    val concept: String?,
     @ColumnInfo(name = "amount")
     val amount: Float?,
 )
