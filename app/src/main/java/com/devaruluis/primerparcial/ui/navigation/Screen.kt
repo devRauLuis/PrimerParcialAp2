@@ -15,11 +15,11 @@ enum class Screen(
     ),
     Registry(
         icon = Icons.Filled.Person,
-        displayText = "Registro Personas",
+        displayText = "Registro Prestamos",
     ),
     Query(
         icon = Icons.Filled.Person,
-        displayText = "Consulta Personas"
+        displayText = "Consulta Prestamos"
     );
 
     companion object {
