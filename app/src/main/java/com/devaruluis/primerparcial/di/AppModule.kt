@@ -3,7 +3,7 @@ package com.devaruluis.loanscompose.di
 import android.content.Context
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.devaruluis.loanscompose.database.LoansDatabase
+import com.devaruluis.loanscompose.database.Database
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -22,7 +22,7 @@ object AppModule {
     @Provides
     fun provideRoom(@ApplicationContext context: Context) = Room.databaseBuilder(
         context,
-        LoansDatabase::class.java, LOANS_DATABASE_NAME
+        Database::class.java, LOANS_DATABASE_NAME
     ).fallbackToDestructiveMigration().setQueryCallback(
         RoomDatabase.QueryCallback
         { sqlQuery, bindArgs ->
@@ -30,10 +30,7 @@ object AppModule {
         }, Executors.newSingleThreadExecutor()
     ).build()
 
-    @Provides
-    fun providePersonDao(loansDatabase: LoansDatabase) = loansDatabase.getPersonDao()
-
-    @Provides
-    fun provideOccupationDao(loansDatabase: LoansDatabase) = loansDatabase.getOccupationDao()
+//    @Provides
+//    fun provideDao(database: Database) = database.getDao()
 
 }

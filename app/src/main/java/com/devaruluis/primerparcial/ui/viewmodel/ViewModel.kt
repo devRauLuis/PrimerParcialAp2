@@ -5,14 +5,9 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.devaruluis.loanscompose.database.dao.OccupationDao
-import com.devaruluis.loanscompose.database.dao.PersonDao
-import com.devaruluis.loanscompose.model.Occupation
-import com.devaruluis.loanscompose.model.Person
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
-import java.io.IOException
 import javax.inject.Inject
 
 data class UiState(
