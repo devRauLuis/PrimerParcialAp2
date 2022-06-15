@@ -83,9 +83,9 @@ class LoanViewModel @Inject constructor(
     fun save() {
         viewModelScope.launch {
             val loan = uiState.toLoan()
-            if (!(loan.debtorName != null && loan.debtorName?.length > 5)) {
+            if (!(loan.debtorName != null && loan.debtorName.length > 5)) {
                 showSnackbar("El nombre del deudor no puede ser tan corto")
-            } else if (!(loan.concept != null && loan.concept?.length > 4)) {
+            } else if (!(loan.concept != null && loan.concept.length > 4)) {
                 showSnackbar("El concepto no puede ser tan corto")
             } else if (!(loan.amount != null && loan.amount > 0)) {
                 showSnackbar("El monto debe ser mayor a 0")
